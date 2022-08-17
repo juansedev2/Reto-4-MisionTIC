@@ -2,7 +2,7 @@
 
 ## Acerca de este proyecto
 
-La aplicación es capaz de hacer operaciones CRUD (Create, Read, Update and Delete (Crear, leer, actualizar y eliminar en español)), a una base de datos de tipo SQL, específicamente realizado con MySQL y el patrón de arquitectura MVC (Modelo Vista Controlador).
+Es una aplicación de escritorio como solución al reto 4, capaz de hacer operaciones CRUD (Create, Read, Update and Delete (Crear, leer, actualizar y eliminar en español)), a una base de datos de tipo SQL, específicamente realizado con MySQL y el patrón de arquitectura MVC (Modelo Vista Controlador).
 
 ![**PANEL DE BIENVENIDA**](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura1.PNG)
 
