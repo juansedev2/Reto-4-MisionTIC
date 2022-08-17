@@ -1,0 +1,6 @@
+
+Sobre los JAR:
+
+El SNAPSHOT que contiene el proyecto con todas las dependencias establecias de es "-jar-with-dependencies.jar", se necesita tener el servidor de bases de datos activo para que opere la aplicación.
+
+Cualquier cosa por favor comentar al desarrollador

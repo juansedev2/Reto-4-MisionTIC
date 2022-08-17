@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1490</x>
+      <y>140</y>
+      <w>165</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Package::javax.swing.JFrame (API JAVA)
+JFrame
+--
+....
+--
+....
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>250</y>
+      <w>160</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Package::mundo
+Conexion
+--
+- conexion: Connection
+- bandera: boolean
+--
++ Conexion()
++ getConexion(): Connection
++ getBandera: boolean
++ setBandera(bandera: boolean)
++ cerrarConexion()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>475</x>
+      <y>90</y>
+      <w>115</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Package::mundo
+OperacionesInt
+--
+/+ crear(): boolean/
+/+ leer(): boolean/
+/+ actualizar(): boolean/
+/+ eliminar(): boolean/
+/+ cerrarConexion(): boolean/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>245</y>
+      <w>205</w>
+      <h>145</h>
+    </coordinates>
+    <panel_attributes>Package::mundo
+CuerpoDeAguaDAO
+--
+- cadena_datos_entrada: String
+- lista_datos_salida: ArrayList&lt;String&gt;
+- cantidad_inferiores: String
+- lista_datos_calculados : ArrayList&lt;String&gt;
+- conexion : Conexion
+--
++ CuerpoDeAguaDao()
++ getCadena_datos_entrada() : String
++ setCadena_datos_entrada(cadena_datos_entrada : String)
++ getLista_datos_salida() : ArrayList&lt;String&gt;
++ setLista_datos_salida(lista_datos_salida: ArrayList&lt;String&gt;) 
++ getLista_datos_calculados(): ArrayList&lt;String&gt;
++ setLista_datos_calculados(lista_datos_calculados: ArrayList&lt;String&gt;)
++ consultarNivelesRiesgo() : boolean
++ consultarCuerposInferiores() : boolean
++ consultarCuerposMedios() : boolean
++ consultarCuerpoBajo() : boolean
++ consultarCantidadRegistros() : boolean
+- reiniciarListaDatosSalida()
+- calcularClasificacionIrca(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>145</y>
+      <w>15</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>155</x>
+      <y>255</y>
+      <w>245</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2= 1..1
+es contenida &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>395</x>
+      <y>490</y>
+      <w>205</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Package::mundo
+TipoCuerpoAguaDAO
+--
+- lista_cuerpos_de_agua : ArrayList&lt;String&gt;
+- conexion : Conexion
+--
++ consultarTiposCuerposDeAgua()
++ getLista_cuerpos_de_agua() : ArrayList&lt;String&gt;
++ setLista_cuerpos_de_agua(lista_cuerpos_de_agua : ArrayList&lt;String&gt;)
++ reiniciarListaDatosSalida()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>610</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Package::mundo
+TipoAguaDAO
+--
+- lista_tipos_de_agua : ArrayList&lt;String&gt;
+- conexion : Conexion
+--
++ consultarTiposDeAgua()
++ getLista_tipos_de_agua() : ArrayList&lt;String&gt;
++ setLista_tipos_de_agua(lista_tipos_de_agua : ArrayList&lt;String&gt;)
++ reiniciarListaDatosSalida()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>155</x>
+      <y>260</y>
+      <w>255</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2= 1..1
+es contenida &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;480.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>155</x>
+      <y>260</y>
+      <w>260</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2= 1..1
+es contenida &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;490.0;720.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>625</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Package::controlador
+TipoAguaDTO
+--
+- tipo_agua_dao : TipoAguaDao
+--
++ TipoDeCuerpoAguaDTO()
++ getTipo_de_agua_dao() : TipoDeAguaDao
++ setTipo_de_agua_dao(tipo_de_agua_dao : TipoDeAguaDao)
++ devolverTodos() : ArrayList&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>815</x>
+      <y>260</y>
+      <w>205</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Package::controlador
+CuerpoDeAguaDto
+--
+- cuerpo_de_agua_dao : CuerpoDeAguaDao
+--
++ CuerpoDeAguaDto()
++ getCuerpo_de_agua_dao() : CuerpoDeAguaDao
++ setCuerpo_de_agua_dao(cuerpo_de_agua_dao : CuerpoDeAguaDao)
++ getLista_datos_calculados(): ArrayList&lt;String&gt;
++ setLista_datos_calculados(lista_datos_calculados : ArrayList&lt;String&gt;)
++ insertarNuevoCuerpo() : boolean
++ devolverTodos() : ArrayList&lt;String&gt;
++ devolverEspecifico(id_cuerpo_agua : String) : ArrayList&lt;String&gt;
++ devolverNiveles() : ArrayList&lt;String&gt;
++ devolverInferiores(): String
++ devolverMedios(): ArrayList&lt;String&gt;
++ devolverMasBajo(): ArrayList&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>475</y>
+      <w>240</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Package::controlador
+TipoDeCuerpoAguaDTO
+--
+- tipo_cuerpo_agua_dao : TipoDeCuerpoAguaDao
+--
++ TipoDeCuerpoAguaDTO()
++ getTipo_cuerpo_de_agua_dao(): TipoDeCuerpoAguaDao
++ setTipo_cuerpo_de_agua_dao(tipo_cuerpo_de_agua_dao : TipoDeCuerpoAguaDao)
++ devolverTodos(): ArrayList&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>815</x>
+      <y>120</y>
+      <w>205</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstrac class&gt;&gt;
+Package::contrlador
+OperacionesDTO
+--
+- cadena_datos_entrada: String
+- lista_datos_salida : ArrayList&lt;String&gt;
+--
+/+ getCadena_datos_entrada(): String/
+/+ setCadena_datos_entrada(cadena_datos_entrada : String)/
+/+ getLista_datos_salida() : ArrayList&lt;String&gt;/
+/+ setLista_datos_salida(lista_datos_salida: ArrayList&lt;String&gt;)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>925</x>
+      <y>185</y>
+      <w>15</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>365</y>
+      <w>15</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>935</x>
+      <y>525</y>
+      <w>15</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>255</y>
+      <w>235</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2= 1..1
+es contenida &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>485</y>
+      <w>235</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2= 1..1
+es contenida &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>620</y>
+      <w>235</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2= 1..1
+es contenida &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1520</x>
+      <y>290</y>
+      <w>95</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
+Package::interfazApp
+InterfazApp
+--
+- jButton1 : javax.swing.JButton
+- jButton2 : javax.swing.JButton
+- jButton3 : javax.swing.JButton
+- jButton4 : javax.swing.JButton
+- jLabel1 : javax.swing.JLabel
+- jLabel2 : javax.swing.JLabel
+--
+- jButton1ActionPerformed()
+- jButton2ActionPerformed()
+- jButton3ActionPerformed()
+- jButton4ActionPerformed()
++ InterfazApp()
+_+ main(args[] : String)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>360</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
+Package::interfazApp
+ViewPanelProcesar
+--
+- jButton1 : javax.swing.JButton 
+- jButton2 : javax.swing.JButton 
+- jLabel1 : javax.swing.JLabel
+- jLabel2 : javax.swing.JLabel
+- jScrollPane1: javax.swing.JScrollPane
+- jScrollPane2: javax.swing.JScrollPane
+- jTextArea1 : javax.swing.JTextArea
+- jTextArea2 : javax.swing.JTextArea
+--
++ ViewPanelProcesar()
+- jButton1ActionPerformed()
+- jButton2ActionPerformed()
+_+ main(args[] : String)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>115</y>
+      <w>170</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
+Package::interfazApp
+ViewPanelConsulta
+--
+- lista_tipos_cuerpos_agua: ArrayList&lt;String&gt;
+- lista_tipos_agua: ArrayList&lt;String&gt;
+- cadena_datos : String
+- auxiliar : String
+- jButton1 : javax.swing.JButton
+- jComboBox1 : javax.swing.JComboBox&lt;String&gt;
+- jComboBox2 : javax.swing.JLabel
+- jLabel1 : javax.swing.JLabel
+- jLabel2 : javax.swing.JLabel
+- jLabel3 : javax.swing.JLabel
+- jLabel4 : javax.swing.JLabel
+- jLabel5 : javax.swing.JLabel
+- jLabel6 : javax.swing.JLabel
+- jTextField3 : javax.swing.JTextField
+- TextField4 : javax.swing.JTextField
+--
++ ViewPanelAgregar()
+- jButton1ActionPerformed()
+- jButton2ActionPerformed()
+- jButton3ActionPerformed()
+- obtenerConfirmacion(): boolean
+- bloquearTodos()
+- vaciarEspacios()
+- definirCajasOpciones()
+- estanVaciosCampos() : booelan
+- reiniciarCampos()
+- esIrcaNumero(String numero)
+- agregarCuerpo() : boolean
+_+ main(args[] : String)_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>535</y>
+      <w>170</w>
+      <h>155</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
+Package::interfazApp
+ViewPanelAgrgar
+--
+- jButton1 : javax.swing.JButton
+- jComboBox1 : javax.swing.JComboBox&lt;String&gt; 
+- javax.swing.JComboBox&lt;String&gt; jComboBox2
+- jLabel1 : javax.swing.JLabel 
+- jLabel2 : javax.swing.JLabel 
+- jLabel3 : javax.swing.JLabel
+- jLabel4 : javax.swing.JLabel
+- jLabel5 : javax.swing.JLabel
+- jLabel6 : javax.swing.JLabel
+- jTextField3 : javax.swing.JTextField 
+- jTextField4 : javax.swing.JTextField
+- jTextField5 : javax.swing.JTextField
+--
++ ViewPanelAgregar()
+- definirCajasOpciones()
+- jButton1ActionPerformed
+- esIrcaNumero(String numero)
+- estanVaciosCampos()
+- reiniciarCampos()
+- agregarCuerpo() : boolean
+_+ main(args[] : String)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>385</y>
+      <w>15</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>545</y>
+      <w>15</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1345</x>
+      <y>355</y>
+      <w>185</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>350.0;10.0;10.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1355</x>
+      <y>365</y>
+      <w>175</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>330.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1345</x>
+      <y>120</y>
+      <w>185</w>
+      <h>265</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>350.0;510.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1015</x>
+      <y>235</y>
+      <w>175</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>330.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1015</x>
+      <y>245</y>
+      <w>175</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>330.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>975</x>
+      <y>275</y>
+      <w>215</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>410.0;10.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1035</x>
+      <y>275</y>
+      <w>155</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;700.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1015</x>
+      <y>130</y>
+      <w>175</w>
+      <h>555</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>330.0;1090.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1055</x>
+      <y>480</y>
+      <w>135</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>250.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1035</x>
+      <y>625</y>
+      <w>155</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>290.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1015</x>
+      <y>260</y>
+      <w>175</w>
+      <h>195</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>330.0;370.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1025</x>
+      <y>270</y>
+      <w>165</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>310.0;360.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1565</x>
+      <y>185</y>
+      <w>15</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+</diagram>

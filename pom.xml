@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>interfaz</groupId>
+    <artifactId>Reto4</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+        <!--<exec.mainClass>com.mycompany.reto2.reto4aux.Reto4Aux</exec.mainClass> -->
+        <!--Tener cuidado y marcar correctamente la clase principal que se debe ejecutar-->
+        <exec.mainClass>interfaz.InterfazApp</exec.mainClass>
+    </properties>
+    <!-- Para poder agregar dependencias, en este caso por ejemplo los drivers de mysql (jdbc), debe declararse en el archivo pom
+    la sección de "dependencies" como etiquetas de apertura y cierre, dentro de estas colocar todas las "dependency" que serán los drivers
+    a indicarle a Maven que descargue, luego se selecciona limpiar y construir al proyecto y/o recargar POM, cuando Maven lo detecte y lo encuentre
+    va a descargar el recurso.
+    Para buscar más dependencias, este es el repositorio oficial de Maven: https://mvnrepository.com/ -->
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java
+        Este es el jdbc de MySQL-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.29</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc 
+        Este es el de SQL Lite -->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.39.2.0</version>
+        </dependency>
+    </dependencies>
+    <!-- NOTA: SUPER IMPORTANTE ESTA DEPENDENCIA PARA GENERAR JAR -->
+    <!-- Build es una etiqueta que contendrá plugins para maven (al menos por ahora se que carga con eso)-->
+    <build>
+        <!--Plugins es la etiqueta contenedora de todos los plugins que se añadan y cada plugin se encapsula por aparte-->
+        <plugins>
+            <!-- Plugin contiene todos los datos acerca de un solo plugin especícifo -->
+            <plugin>
+                <!-- https://maven.apache.org/plugins/maven-assembly-plugin/usage.html 
+                https://www.nocompila.com/2016/11/java-maven-hello-world.html
+                https://www.youtube.com/watch?v=0mv_Izgpv_Y-->
+                <!-- En este caso este plugin me permite convertir un proyecto maven en un JAR-->
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>interfaz.InterfazApp</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <!-- this is used for inheritance merges -->
+                        <phase>package</phase>
+                        <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>        
+    </build>
+</project>

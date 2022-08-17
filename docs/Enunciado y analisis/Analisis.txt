@@ -1,0 +1,105 @@
+Análisis del reto 4
+	
+La problemática es la misma planteada, el dispositivo de lector de nivel de agua basado en la clasificación IRCA. La diferencia de este reto contra el tercero, es que ahora manejaremos persistencia, porque exige el uso de las bases de 
+datos, por lo tanto ya no usaremos memoria volatil y estructuras de datos para almacenarlos y ahora acudiremos a memoria secundaria para consulta de datos y posteriormente tener la posibilidad de hacer operaciones CRUD, por supuesto
+entonces esta base de datos será de tipo relacional, también se solicita una interfaz gráfica y con ello diversas ventadas destinadas a cada operación CRUD. 
+
+La clasificación IRCA plasmada en la tabla es la misma que se ha trabajado anteriormente y la información de los cuerpos de agua es la misma, solo que ahora necesitamos hacer el diseño lógico de la base de datos con lo que se solicita.
+
+	Análisis de requerimientos de la base de datos:
+
+	Se requiere que usted desarrolle un programa que debe realizar lo siguiente:
+
+	Leer y almacenar en base de datos:
+
+	o	El nombre de cada cuerpo de agua
+	o	Número con el que se identifica (llave primaria)
+	o	El municipio del que forma parte 
+	o	Tipo de cuerpo de agua
+	o	Tipo de agua
+	o	La clasificación IRCA
+
+	La base de datos debe contener una tabla con los datos del cuerpo de agua.
+	El programa debe manejar las operaciones de CRUD
+
+
+	Con todos los registros de la tabla el programa deberá:
+
+	o	Indicar cuál fue el nivel de riesgo de cada cuerpo de agua.
+	o	Indicar cuántos cuerpos de agua tienen un nivel de riesgo MEDIO o inferior.
+	o	Indicar el Nombre de los cuerpos de agua que tienen un nivel de riesgo MEDIO, en caso de no haber ninguno devolver NA.
+	o	Indicar el nombre del cuerpo de agua con la clasificación IRCA más baja encontrada y su número identificador.
+	
+
+Se procede a analizar las entidades, tipos de entidades, atributos y relaciones (sustantivos, adjetivos y verbos):
+
+	
+	o  Cuerpo de agua viene a ser la única entidad existente en el sistema a nivel de base de datos, sus atributos son:
+
+		# Nombre (cadena de caracteres)
+		# Número de identificación (int llave primaria)
+		# Municipio del que forma parte (cadena de caracteres)
+		# Tipo de cuerpo de agua (cadena de caracteres)   --- >  (Análsis alternativo adcional de abajo pasaría a ser un int (llave foránea))
+		# Tipo de agua (cadena de caracteres)   --- > (Análsis alternativo adicional de abajo pasaría a ser un int (llave foránea))
+		# Numero_clasificación IRCA (decimal)
+		# Clasificación IRCA(caracter y derivado de Numero_clasificación)
+		
+		NOTA: Ningún atributo podrá ser nulo.
+
+		Observaciones: Los campos de tipo de cuerpo de agua y tipo de agua podrían ser otro tipo de entidad, debido a que sus valores podrían ser cerrados (forzar a determinada opción); pero en el documento no se especifica
+		que valores podría tomar y en teoría son arbitrarios, lo cual no debería serlo (incluso el municipio, sin embargo este ya es mas largo en sus valores (como 1103 en colombia) y por el momento no agregaré esta por ser más larga). 
+
+		Se propone entonces la creación de los tipos de entidad (tipo de cuerpo de agua y tipo de agua):
+
+		o  Tipo de cuerpo de agua (alternativo):
+		
+	 		# id_tipo_cuerpo_agua (int llave primaria)
+			# descripcion (cadena de caracteres)
+		
+			NOTA: Ningún atributo podrá ser nulo y los valores que podría tener en descripción son: Rio, laguna, hielo, cosas así.
+
+		o Tipo de agua (alternativo):
+
+			# id_tipo_agua (int llave primaria)
+			# descripcion (cadena de caracteres)
+
+			NOTA: Ningún atributo podrá ser nulo y los valores que podría tener en la descripción son: Dulce y salado (si hubiera otro pues se agrega	).
+
+	Siendo así como se propone, las relaciones serían:
+
+		! Muchos cuerpos de agua les pertenece un solo tipo de cuerpo de agua, y un solo tipo de cuerpo de agua le pertenece a un cuerpo de agua.
+		! Muchos cuperos de agua les pertenece un solo tipo de cuerpo de agua y un solo tipo de cuerpo de agua le pertenece a un cuerpo de agua.
+
+	
+	Conclusión: Se debe de realizar la creación de los tipos de entidad, cuerpo de agua, tipo de cuerpo de agua y tipo de agua, de esta forma se puede escalar la aplicación al solo necesitar agregar tipos de cuerpo de agua
+ 	y tipo de agua en vez de permitir que sean datos totalmente arbitrarios.
+
+	SOBRE LOS DIAGRAMAS: Se encuentran en el directorio de diagramas.	
+
+En cuanto a operaciones en la base de datos, estarán por supuesto las operaciones CRUD con la tabla cuerpo de agua; pero en la parte de consultas, se añade lo siguiente:
+
+	
+	Con todos los registros de la tabla el programa deberá:
+
+	o	Indicar cuál fue el nivel de riesgo de cada cuerpo de agua.
+	o	Indicar cuántos cuerpos de agua tienen un nivel de riesgo MEDIO o inferior.
+	o	Indicar el Nombre de los cuerpos de agua que tienen un nivel de riesgo MEDIO, en caso de no haber ninguno devolver NA.
+	o	Indicar el nombre del cuerpo de agua con la clasificación IRCA más baja encontrada y su número identificador.
+
+	Se pensará en realizar procedimientos almacenados para mayor seguridad, buenas prácticas y evitar sentencias SQL CRUD explícitas en la lógica de negocio.
+
+	
+
+En cuanto al diagrama de clases de la aplicación, se trabajará con la misma abstracción, solo que se agregará la clase de conexión, una interface de operaciones comunes con la base de datos y nuevas ventanas.
+
+	Observaciones técnicas y lógicas:
+
+	1. Se pensaba mantener la misma estructura, sin embargo se empiza a descartar la idea de tener objetos que retengan la información de manera innecesaria, ya que si ahora estamos trabajando con memoria secundaria (persistencia),
+	ya no vale la pena retener en memoria volatil (RAM) la información almacenada y más bien las clases DAO deberán realizar la interacción con la base de datos, tener toda la lógica de negocio y la información solo tendría que
+	ser llevada y traida de la bd.
+
+	2. SQLite al paracer no soporta procedimientos almacenados y por lo tanto se descartaría la idea de utilizarlos, la verdad me parece que es una muy buena práctica utilizar procedimientos almacenados y no plasmar sentencias SQL
+	explícita en el código de la aplicación del "servidor" de manera explícita, podría usarlas si usaría MySQL como SGBD; pero en aras de utilizar SQLLite, por ahora en este proyecto no lo usaré.
+
+	3. El ID de identificacion no se dispondrá al usuario, debidoa a que este fue configurado como único y autoincrementable, no tendría mucho sentido que el usuario quisera poder modificarlo y/o romper el
+	orden que tuviere los registros, así que ese dato ya no se solicitará la usuario.

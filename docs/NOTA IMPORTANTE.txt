@@ -1,0 +1,10 @@
+PARA USAR LA APLICACIÓN:
+
+1. La base de datos es de tipo MySQL con el gestor de MariaBD, proporcionado por PHPMYADMIN, el script sql para crear la base de datos está en el archivo "bd_irca(1).sql" en el directorio de Script base de datos.
+2. Por favor se encomienda crear la base de datos con el script proporcionado, la aplicación no funcionará con un mínimo de datos soportados.
+3. Para comprender el sistema puede consultar los diagramas realizados.
+4. Solo por el momento, a pesar de que se puede agregar más tipos de cuerpo de agua y tipos de agua en la base de datos, se recomienda NO HACERLO, puesto que no se asegura el funcionamiento, se está trabajando en esto actualmente,
+así que usar por el momento los definidos.
+5. Esta aplicación es soportada por Java SE versión 16 en adelante, en versiones inferiores "podría presentar fallas" y/o en casos de que haya más de una versión de Java instalada.
+
+Gracias por su compresión y su atención.
