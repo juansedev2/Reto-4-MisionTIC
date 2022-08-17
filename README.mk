@@ -1,6 +1,6 @@
 **Para empezar por favor mira el directorio de docs**
 
-## Título
+## About Laravel
 ### Subtítulo
 Este es un ejemplo de texto que da entrada a una lista genérica de elementos:
 - Elemento 1
