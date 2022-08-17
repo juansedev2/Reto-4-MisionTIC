@@ -12,12 +12,12 @@ Se puede agregar un cuerpo de agua solicitando los datos en el panel de agregar:
 
 Se pueden consultar otros datos de otros cuerpos de agua, actualizarlos/eliminarlos según se el caso en el panel de consulta:
 
-![**PANEL DEL CONSULTA**](https://ejemplo.com/imagen.jpg](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura3.PNG)
+![**PANEL DEL CONSULTA**](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura3.PNG)
 
 
 Finalmente en el panel de procesamiento se utilizan todos los cuerpos de agua registrados y se procede a realizar su tratamiento y mostrar resultados según los solicitado en requerimientos.
 
-![**PANEL DEL PROCESAMIENTO**](https://ejemplo.com/imagen.jpg](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura4.PNG)
+![**PANEL DEL PROCESAMIENTO**](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura4.PNG)
 
 
 Fin
