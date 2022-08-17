@@ -1,27 +1,23 @@
 **Para empezar por favor mira el directorio de docs**
 
-## About Laravel
+## Acerca de este proyecto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+La aplicación es capaz de hacer operaciones CRUD (Create, Read, Update and Delete (Crear, leer, actualizar y eliminar en español)), a una base de datos de tipo SQL, específicamente realizado con MySQL.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![**PANEL DE BIENVENIDA**]([https://ejemplo.com/imagen.jpg](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura1.PNG))
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Se puede agregar un cuerpo de agua solicitando los datos en el panel de agregar: 
 
-## Learning Laravel
+![**PANEL DEL AGREGAR**]([https://ejemplo.com/imagen.jpg](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura2.PNG))
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Se pueden consultar otros datos de otros cuerpos de agua, actualizarlos/eliminarlos según se el caso en el panel de consulta:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![**PANEL DEL CONSULTA**]([https://ejemplo.com/imagen.jpg](https://ejemplo.com/imagen.jpg](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura3.PNG))
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Finalmente en el panel de procesamiento se utilizan todos los cuerpos de agua registrados y se procede a realizar su tratamiento y mostrar resultados según los solicitado en requerimientos.
 
-### Premium Partners
+![**PANEL DEL PROCESAMIENTO**]([https://ejemplo.com/imagen.jpg](https://ejemplo.com/imagen.jpg](https://github.com/juansedev2/Reto-4-MisionTIC/blob/master/docs/Capturas/Captura4.PNG))
+
+
+Fin
